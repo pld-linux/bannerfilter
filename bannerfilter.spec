@@ -1,16 +1,17 @@
 # TODO:
 # - separate package with www-files
-# - add cron-job file to update
 %include	/usr/lib/rpm/macros.perl
 Summary:	A redirect script for the Squid proxy to block ad banners
 Summary(pl):	Skrypt dla Squida przekierowuj±cy w celu blokowania bannerów reklamowych
 Name:		bannerfilter
-Version:	1.21
+Version:	1.3
 Release:	1
+Epoch:		1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://phroggy.com/files/unix/%{name}-%{version}.tar.gz
-# Source0-md5:	3de85fc0f8bafbe8c3c72f10bd61379f
+# Source0-md5:	349276b78f68e9ab2dcb9c8fa0282352
+Source1:	%{name}.cron
 Patch0:		%{name}-conf.patch
 URL:		http://phroggy.com/bannerfilter/
 BuildRequires:	rpm-perlprov >= 3.0.3-18
@@ -37,8 +38,9 @@ wyskakuj±ce okienka.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/squid/%{name},%{_sbindir},%{_http_dir}}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir}/squid/%{name},%{_sysconfdir}/cron.daily/,%{_sbindir},%{_http_dir}}
 
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.daily/bannerfilter
 install bannerfilter.conf $RPM_BUILD_ROOT%{_sysconfdir}/squid
 install redirector.pl $RPM_BUILD_ROOT%{_sbindir}/redirector
 install update.sh $RPM_BUILD_ROOT%{_sbindir}/%{name}-update
@@ -57,6 +59,7 @@ echo "redirect_program %{_sbindir}/redirector"
 %doc CHANGES README TODO
 %attr(755,root,root) %{_sbindir}/redirector
 %attr(755,root,root) %{_sbindir}/%{name}-update
+%attr(740,root,root) /etc/cron.daily/bannerfilter
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/*.conf
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/%{name}/*.data
 %attr(750,root,squid) %dir %{_sysconfdir}/squid/%{name}

@@ -1,11 +1,11 @@
---- ./bannerfilter.conf.org	Mon Nov 11 07:42:56 2002
-+++ ./bannerfilter.conf	Thu Dec 26 19:15:13 2002
-@@ -4,7 +4,7 @@
- # http://phroggy.com/bannerfilter/
- 
- # Path to the directory containing the data files:
--DATA = /usr/local/squid/bannerfilter-1.21
+--- bannerfilter-1.3/bannerfilter.conf  2004-05-31 18:47:28.000000000 +0000
++++ bannerfilter-1.3.new/bannerfilter.conf      2004-06-05 07:08:29.014353920 +0000
+@@ -6,6 +6,7 @@
+ # Path to the directory containing the data files (if not specified,
+ # look in the same directory that redirector.pl is in):
+ ; DATA = /usr/local/squid/bannerfilter/
 +DATA = /etc/squid/bannerfilter
- 
- # URL of the directory containing the HTML and graphics files
- # (this must be accessible to the machine running Squid; it does
+
+ # URL of the directory containing the HTML and graphics files (this must
+ # be accessible to the machine running Squid; it does not need to be
+

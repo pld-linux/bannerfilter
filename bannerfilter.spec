@@ -4,13 +4,13 @@
 Summary:	A redirect script for the Squid proxy to block ad banners
 Summary(pl):	Skrypt dla Squida przekierowuj±cy w celu blokowania bannerów reklamowych
 Name:		bannerfilter
-Version:	1.3
+Version:	1.31
 Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://phroggy.com/files/unix/%{name}-%{version}.tar.gz
-# Source0-md5:	349276b78f68e9ab2dcb9c8fa0282352
+# Source0-md5:	329a8a6e2b04b21a6f77a365e62e0881
 Source1:	%{name}.cron
 Patch0:		%{name}-conf.patch
 URL:		http://phroggy.com/bannerfilter/

@@ -3,6 +3,7 @@
 # - add cron-job file to update
 %include	/usr/lib/rpm/macros.perl
 Summary:	A redirect script for the Squid proxy to block ad banners
+Summary(pl):	Skrypt dla Squida przekierowuj±cy w celu blokowania bannerów reklamowych
 Name:		bannerfilter
 Version:	1.21
 Release:	1
@@ -11,10 +12,9 @@ Group:		Applications/System
 Source0:	http://phroggy.com/files/unix/%{name}-%{version}.tar.gz
 Patch0:		%{name}-conf.patch
 URL:		http://phroggy.com/bannerfilter/
-BuildArch:	noarch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 Requires:	squid
-%requires_eq	perl
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_http_dir	/home/services/httpd/html/bannerfilter
@@ -23,6 +23,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BannerFilter is a redirect script for the Squid proxy server, designed
 to block advertising banners on the Web. Unlike most other solutions,
 it also automatically closes popup windows.
+
+%description -l pl
+BannerFilter to skrypt przekierowuj±cy dla serwera proxy Squid,
+przeznaczony do blokowania bannerów reklamowych na WWW. W
+przeciwieñstwie do innych rozwi±zañ, dodatkowo automatycznie zamyka
+wyskakuj±ce okienka.
 
 %prep
 %setup -q
@@ -50,7 +56,7 @@ echo "redirect_program %{_sbindir}/redirector"
 %doc CHANGES README TODO
 %attr(755,root,root) %{_sbindir}/redirector
 %attr(755,root,root) %{_sbindir}/%{name}-update
-%config(noreplace)  %verify(not size mtime md5) %{_sysconfdir}/squid/*.conf
-%config(noreplace)  %verify(not size mtime md5) %{_sysconfdir}/squid/%{name}/*.data
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/*.conf
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/%{name}/*.data
 %attr(750,root,squid) %dir %{_sysconfdir}/squid/%{name}
 %{_http_dir}/*

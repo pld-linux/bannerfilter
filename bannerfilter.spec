@@ -10,6 +10,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://phroggy.com/files/unix/%{name}-%{version}.tar.gz
+# Source0-md5:	3de85fc0f8bafbe8c3c72f10bd61379f
 Patch0:		%{name}-conf.patch
 URL:		http://phroggy.com/bannerfilter/
 BuildRequires:	rpm-perlprov >= 3.0.3-18

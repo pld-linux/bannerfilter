@@ -8,4 +8,13 @@
 
  # URL of the directory containing the HTML and graphics files (this must
  # be accessible to the machine running Squid; it does not need to be
+--- bannerfilter-1.3/update.sh  2004-05-31 21:52:25.000000000 +0000
++++ bannerfilter-1.3.new/update.sh      2004-06-05 07:22:35.021741248 +0000
+@@ -114,5 +114,5 @@
+
+ # Send all instances of redirector.pl a signal to reload the data files
+ if [ $RELOAD == 1 ] && [ $CHANGED == 1 ]; then
+-  killall -HUP redirector.pl
++  killall -HUP redirector
+ fi
 

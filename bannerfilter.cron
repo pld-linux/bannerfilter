@@ -1,2 +1,2 @@
 #!/bin/sh
-bannerfilter-update
+/usr/sbin/bannerfilter-update

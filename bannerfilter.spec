@@ -18,7 +18,7 @@ Requires:	squid
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_http_dir	/home/services/httpd/html/bannerfilter
+%define		_http_dir	/srv/httpd/html/bannerfilter
 
 %description
 BannerFilter is a redirect script for the Squid proxy server, designed

@@ -1,0 +1,11 @@
+--- ./bannerfilter.conf.org	Mon Nov 11 07:42:56 2002
++++ ./bannerfilter.conf	Thu Dec 26 19:15:13 2002
+@@ -4,7 +4,7 @@
+ # http://phroggy.com/bannerfilter/
+ 
+ # Path to the directory containing the data files:
+-DATA = /usr/local/squid/bannerfilter-1.21
++DATA = /etc/squid/bannerfilter
+ 
+ # URL of the directory containing the HTML and graphics files
+ # (this must be accessible to the machine running Squid; it does

@@ -63,4 +63,4 @@ echo "redirect_program %{_sbindir}/redirector"
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/*.conf
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/%{name}/*.data
 %attr(750,root,squid) %dir %{_sysconfdir}/squid/%{name}
-%{_http_dir}/*
+%{_http_dir}

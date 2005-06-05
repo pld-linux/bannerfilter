@@ -60,7 +60,7 @@ echo "redirect_program %{_sbindir}/redirector"
 %attr(755,root,root) %{_sbindir}/redirector
 %attr(755,root,root) %{_sbindir}/%{name}-update
 %attr(740,root,root) /etc/cron.daily/bannerfilter
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/*.conf
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/squid/%{name}/*.data
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/squid/*.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/squid/%{name}/*.data
 %attr(750,root,squid) %dir %{_sysconfdir}/squid/%{name}
 %{_http_dir}

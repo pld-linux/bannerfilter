@@ -2,7 +2,7 @@
 # - separate package with www-files
 %include	/usr/lib/rpm/macros.perl
 Summary:	A redirect script for the Squid proxy to block ad banners
-Summary(pl.UTF-8):   Skrypt dla Squida przekierowujący w celu blokowania bannerów reklamowych
+Summary(pl.UTF-8):	Skrypt dla Squida przekierowujący w celu blokowania bannerów reklamowych
 Name:		bannerfilter
 Version:	1.31
 Release:	1
